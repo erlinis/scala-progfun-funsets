@@ -1,5 +1,5 @@
 # scala-progfun-funsets
-Exercises Week 2 - Course [Functional Programming Principles in Scala ](https://class.coursera.org/progfun-005/assignment/view?assignment_id=3) by Martin Odersky
+[Exercises Week 2](https://class.coursera.org/progfun-005/assignment/view?assignment_id=3) - Course Functional Programming Principles in Scala by Martin Odersky
 
 --------------
 Representation
