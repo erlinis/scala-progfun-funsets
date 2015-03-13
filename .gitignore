@@ -1,0 +1,6 @@
+# Ignore all library jars, those are included when a Scala project is created
+/lib_managed
+
+# Ignore all .class generated after compilation
+/target
+
