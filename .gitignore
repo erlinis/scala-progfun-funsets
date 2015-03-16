@@ -4,3 +4,8 @@
 # Ignore all .class generated after compilation
 /target
 
+# Ignore all config files
+.cache
+.classpath
+.settings
+.project

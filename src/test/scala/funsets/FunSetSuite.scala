@@ -82,6 +82,7 @@ class FunSetSuite extends FunSuite {
 		val s1 = singletonSet(1)
 		val s2 = singletonSet(2)
 		val s3 = singletonSet(3)
+    val s4 = singletonSet(4)
 	}
 
 	/**
@@ -152,6 +153,36 @@ class FunSetSuite extends FunSuite {
       assert(!contains(t, 3), "filter: t not contains 3")
 		}
 	}
-
+  
+  
+  test("forall") {
+    new TestSets {
+      val s = union(union(s1, s2), s3)  // {1, 2, 3}
+      assert(forall(s, x => x > -1), " all items are (x > -1) ?") 
+      assert(!forall(s, x => x > 2), " all items are (x > 2) ?") 
+      
+      val y = union(s2, s4)
+      assert(forall( y, x => ((x % 2) == 0)), " are all items even ?")      
+    }
+  }
+  
+  
+  test("exists") {
+    new TestSets {
+      val s = union(union(s1, s2), s3)  // {1, 2, 3}
+      assert(exists(s, x => x > -1), "there is at least one item greater than -1?") 
+      assert(!exists(s, x => x > 5), "there is at least one item greater than 5?") 
+      assert(exists(s, x => ((x % 2) == 0)), "there is at least one even?")      
+    }
+  }
+  
+   test("map") {
+    new TestSets {
+      val s = map(union(s2, s3), x => x * 2 ) // {1, 2}
+      assert(contains(s, 4), "map contains 4")
+      assert(contains(s, 6), "map contains 4")
+      assert(!contains(s, 2), "map not contains 2")
+    }
+  }
 
 }
