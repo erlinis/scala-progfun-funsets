@@ -48,7 +48,7 @@ object FunSets {
   /**
    * The bounds for `forall` and `exists` are +/- 1000.
    */
-  val bound = 10
+  val bound = 20
 
   /**
    * def forall(s: Set, p: Int => Boolean): Boolean
@@ -81,12 +81,10 @@ object FunSets {
     iter(bound)  
   } 
   
-
-
   /**
    * Returns a set transformed by applying `f` to each element of `s`.
    */
-  def map(s: Set, f: Int => Int): Set = ???   
+  def map(s: Set, f: Int => Int): Set =  (x:Int) =>{  exists(s, (y:Int) => { x == f(y) } ) }
   
   /**
    * Displays the contents of a set
