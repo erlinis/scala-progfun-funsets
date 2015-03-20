@@ -178,10 +178,15 @@ class FunSetSuite extends FunSuite {
   
    test("map") {
     new TestSets {
-      val s = map(union(s2, s3), x => x * 2 ) // {1, 2}
+      val s = map(union(s2, s3), x => x * 2 )  // {2, 3} -> {4, 6}
       assert(contains(s, 4), "map contains 4")
       assert(contains(s, 6), "map contains 4")
       assert(!contains(s, 2), "map not contains 2")
+      
+      val t = map(union(s2, s3), (x => x - 1) ) // {2, 3} -> {1, 2}
+      assert(contains(t, 1), "map contains 0")
+      assert(!contains(t, 3), "map contains 2")
+
     }
   }
 
